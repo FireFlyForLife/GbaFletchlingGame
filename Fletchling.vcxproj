@@ -46,8 +46,9 @@
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>ARM7;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>$(ProjectDir)\include;$(DEVKITARM)\arm-none-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
-    <IncludePath>$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <NMakeIncludeSearchPath>E:\devkitPro\libtonc\include;$(ProjectDir)\include;$(DEVKITARM)\arm-none-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>/e/devkitPro/libtonc/include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <AdditionalOptions>/std=c++17</AdditionalOptions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
@@ -64,10 +65,26 @@
     <Text Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\maikode_lib\GbaRegisters.cpp" />
+    <ClCompile Include="source\maikode_lib\Grids.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\RaycastRenderer.cpp" />
+    <ClCompile Include="source\TestGame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\ForceInline.h" />
+    <ClInclude Include="include\Game.h" />
+    <ClInclude Include="include\assets\coloredsquares.h" />
     <ClInclude Include="include\Intellisense.h" />
+    <ClInclude Include="include\maikode_lib\GbaRegisters.h" />
+    <ClInclude Include="include\maikode_lib\GbaSprite.h" />
+    <ClInclude Include="include\maikode_lib\Grids.h" />
+    <ClInclude Include="include\maikode_lib\GridUtils.h" />
+    <ClInclude Include="include\math\basic_math.h" />
+    <ClInclude Include="include\math\FixedPoint.h" />
+    <ClInclude Include="include\math\gba_sin.h" />
+    <ClInclude Include="include\RaycastRenderer.h" />
+    <ClInclude Include="include\TestGame.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Makefile">
