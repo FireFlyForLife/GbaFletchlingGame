@@ -1,17 +1,15 @@
 #include "RaycastRenderer.h"
-#include "gba_lib/gba_keys.h"
 #include "maikode_lib/Grids.h"
-#include "gba_lib/gba_regs.h"
-#include "gba_utils/small_utils.h"
 
 #include "math/gba_sin.h"
+#include "small_utils.h"
 
 static void BitmapDrawVerticalLine(uint16_t x, uint16_t y1,  uint16_t y2, u16 color)
 {
 	if (y1 > y2)
 		std::swap(y1, y2);
 	for (uint16_t i = y1; i < y2 + 1; ++i)
-		FrontBuffer[coordToIndex(x, i)] = color;
+		mykd::FrontBuffer_[coordToIndex(x, i)] = color;
 }
 
 void RaycastRenderer::Render(const mykd::Grid2DFixedSize<Tiles, 24, 24>& grid,
@@ -91,9 +89,9 @@ void RaycastRenderer::Render(const mykd::Grid2DFixedSize<Tiles, 24, 24>& grid,
 		//choose wall color
 		uint16_t color;
 		switch (grid.GetAt(mapX, mapY)) {
-		case Tiles::Wall :  color = RGB_Red;  break; //red
-		case Tiles::Something:  color = RGB_Green;  break; //green
-		default: color = RGB_Yellow; break; //yellow
+		case Tiles::Wall :  color = CLR_RED;  break; //red
+		case Tiles::Something:  color = CLR_GREEN;  break; //green
+		default: color = CLR_YELLOW; break; //yellow
 		}
 
 		//give x and y sides different brightness

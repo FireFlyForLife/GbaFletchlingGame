@@ -2,7 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <NOCASHGBA>C:/Users/maiko/Downloads/no$gba/NO$GBA.EXE</NOCASHGBA>
+    <NOCASHGBA>D:\gbadev\tools\nocash_gba\NO$GBA.EXE</NOCASHGBA>
+    <DEVKITARM>D:/gbadev/tools/devKitPro/devkitARM</DEVKITARM>
+    <DEVKITPRO>D:/gbadev/tools/devKitPro</DEVKITPRO>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
@@ -10,6 +12,13 @@
     <BuildMacro Include="NOCASHGBA">
       <Value>$(NOCASHGBA)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="DEVKITARM">
+      <Value>$(DEVKITARM)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="DEVKITPRO">
+      <Value>$(DEVKITPRO)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

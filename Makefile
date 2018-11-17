@@ -1,5 +1,5 @@
-export DEVKITPRO = /e/devkitPro
-export DEVKITARM = /e/devkitPro/devkitARM
+export DEVKITPRO = /d/gbadev/tools/devKitPro
+export DEVKITARM = /d/gbadev/tools/devKitPro/devkitARM
 
 #---------------------------------------------------------------------------------
 .SUFFIXES:
@@ -26,7 +26,7 @@ include $(DEVKITARM)/gba_rules
 TARGET		:= Fletchling
 BUILD		:= build
 SOURCES		:= source
-INCLUDES	:= include
+INCLUDES	:= include external_libs/gcem/include
 DATA		:= font
 MUSIC		:=
 
@@ -51,14 +51,14 @@ LDFLAGS	=	-gdwarf-2 $(ARCH) -Wl,-Map,$(notdir $*.map)
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= -lmm -l:libtonc.a
+LIBS	:= -ltonc
  
  
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(DEVKITPRO)/libtonc/lib
+LIBDIRS	:=	$(CURDIR)/external_libs/libtonc
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional

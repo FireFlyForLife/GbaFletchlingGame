@@ -46,8 +46,8 @@
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>ARM7;WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-    <NMakeIncludeSearchPath>E:\devkitPro\libtonc\include;$(ProjectDir)\include;$(DEVKITARM)\arm-none-eabi\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
-    <IncludePath>/e/devkitPro/libtonc/include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <NMakeIncludeSearchPath>$(ProjectDir)include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>external_libs/gcem/include;external_libs/libtonc/include;$(DEVKITARM)\arm-none-eabi\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <AdditionalOptions>/std=c++17</AdditionalOptions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -84,6 +84,7 @@
     <ClInclude Include="include\math\FixedPoint.h" />
     <ClInclude Include="include\math\gba_sin.h" />
     <ClInclude Include="include\RaycastRenderer.h" />
+    <ClInclude Include="include\small_utils.h" />
     <ClInclude Include="include\TestGame.h" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +93,7 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
+    <None Include="cpp.hint" />
     <None Include="GBA.props" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

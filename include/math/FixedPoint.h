@@ -1,16 +1,16 @@
 #pragma once
 #include <cstdint>
 
-#define 	FIX_SHIFT   8
-#define 	FIX_SCALE   ( 1<<FIX_SHIFT	)
-#define 	FIX_MASK   ( FIX_SCALE-1	)
-#define 	FIX_SCALEF   ( (float)FIX_SCALE	)
-#define 	FIX_SCALEF_INV   ( 1.0/FIX_SCALEF	)
-#define 	FIX_ONE   FIX_SCALE
-#define 	FX_RECIPROCAL(a, fp)   ( ((1<<(fp))+(a)-1)/(a) )
-#define 	FX_RECIMUL(x, a, fp)   ( ((x)*((1<<(fp))+(a)-1)/(a))>>(fp) )
-
-#define FIXED int32_t
+// #define 	FIX_SHIFT   8
+// #define 	FIX_SCALE   ( 1<<FIX_SHIFT	)
+// #define 	FIX_MASK   ( FIX_SCALE-1	)
+// #define 	FIX_SCALEF   ( (float)FIX_SCALE	)
+// #define 	FIX_SCALEF_INV   ( 1.0/FIX_SCALEF	)
+// #define 	FIX_ONE   FIX_SCALE
+// #define 	FX_RECIPROCAL(a, fp)   ( ((1<<(fp))+(a)-1)/(a) )
+// #define 	FX_RECIMUL(x, a, fp)   ( ((x)*((1<<(fp))+(a)-1)/(a))>>(fp) )
+//
+// #define FIXED int32_t
 
 template<uint32_t IntegerPart, uint32_t FractionalPart>
 class FixedPoint
