@@ -22,6 +22,8 @@ public:
 private:
 	s16 x = SCREEN_WIDTH / 2;
 	s16 y = SCREEN_HEIGHT /2;
+	int ii, jj;
+
 
 	mykd::Grid2DFixedSize<RaycastRenderer::Tiles, 24, 24> grid;
 

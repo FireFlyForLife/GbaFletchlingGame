@@ -61,7 +61,7 @@ namespace mykd
 	template <typename T, uint32_t W, uint32_t H>
 	T& Grid2DFixedSize<T, W, H>::GetAt(uint32_t x, uint32_t y)
 	{
-		assert(x < Width() && y < Height());
+		// assert(x < Width() && y < Height());
 
 		return cells[y][x];
 	}
@@ -69,7 +69,7 @@ namespace mykd
 	template <typename T, uint32_t W, uint32_t H>
 	const T& Grid2DFixedSize<T, W, H>::GetAt(uint32_t x, uint32_t y) const
 	{
-		assert(x < Width() && y < Height());
+		// assert(x < Width() && y < Height());
 
 		return cells[y][x];
 	}
@@ -77,7 +77,7 @@ namespace mykd
 	template <typename T, uint32_t W, uint32_t H>
 	void Grid2DFixedSize<T, W, H>::SetAt(uint32_t x, uint32_t y, T&& value)
 	{
-		assert(x < Width() && y < Height());
+		// assert(x < Width() && y < Height());
 
 		cells[y][x] = value;
 	}

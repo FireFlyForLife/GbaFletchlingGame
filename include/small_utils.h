@@ -4,8 +4,7 @@
 
 inline void clearScreen(u16 clearColor)
 {
-	for (u16 i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i)
-		mykd::FrontBuffer_[i] = clearColor;
+	m3_fill(clearColor);
 }
 
 inline u16 coordToIndex(u16 x, u16 y)

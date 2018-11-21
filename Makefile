@@ -35,7 +35,7 @@ MUSIC		:=
 #---------------------------------------------------------------------------------
 ARCH	:=	-mthumb -mthumb-interwork
 
-CFLAGS	:=	-gdwarf-2 -Wall -O3\
+CFLAGS	:=	-gdwarf-2 -Wall -O0\
 		-mcpu=arm7tdmi -mtune=arm7tdmi\
 		-fomit-frame-pointer\
 		-ffast-math \
@@ -51,7 +51,7 @@ LDFLAGS	=	-gdwarf-2 $(ARCH) -Wl,-Map,$(notdir $*.map)
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:= -ltonc
+LIBS	:= -l:libtonc.a
  
  
 #---------------------------------------------------------------------------------

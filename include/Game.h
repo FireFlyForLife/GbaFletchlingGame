@@ -33,14 +33,19 @@ public:
 template<typename T>
 void RunGameLoop(Game<T>& game)
 {
+	nocash_puts("Initializing game...");
 	game.Init();
 
+	nocash_puts("Going into loop...");
 	while(!game.quitGame)
 	{
+		nocash_puts("Updating game...");
 		game.Update();
+		nocash_puts("Rendering game...");
 		game.Render();
 		++game.frameCount;
 	}
 
+	nocash_puts("Shutting down game...");
 	game.Shutdown();
 }

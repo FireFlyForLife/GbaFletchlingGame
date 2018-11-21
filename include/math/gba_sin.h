@@ -5,7 +5,7 @@
 
 #include "gcem.hpp"
 #include "FixedPoint.h"
-#include "tonc_math.h"
+#include "tonc.h"
 
 namespace mykd {
 	template<typename T, size_t Size>

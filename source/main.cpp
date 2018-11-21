@@ -1,17 +1,20 @@
 #include "Intellisense.h"
 #include <cstring>
 #include "math/basic_math.h"
-#include "tonc_types.h"
+#include "tonc.h"
 #include "maikode_lib/GbaRegisters.h"
 #include <ctime>
 #include "Game.h"
 #include "TestGame.h"
+#include "small_utils.h"
 
 using namespace BMath;
 
-//Screen coord to buffer index
-u16 coordToIndex(u16 x, u16 y);
-void clearScreen(u16 clearColor);
+#define BREAK_NOCASH __asm("mov r11, r11")
+
+// //Screen coord to buffer index
+// u16 coordToIndex(u16 x, u16 y);
+// void clearScreen(u16 clearColor);
 
 
 // time_t startTime = 0;
@@ -38,9 +41,20 @@ void clearScreen(u16 clearColor);
 
 int main()
 {
-	Game<TestGame> testGame;
+	//nocash_puts("Test!!");
 
+	//BREAK_NOCASH;
+
+	//REG_DISPCNT = DCNT_MODE3 | DCNT_BG2;
+
+	//clearScreen(RGB15(50, 0, 0));
+	// nocash_puts("Hello Test 123 test!!!");
+	//
+	Game<TestGame> testGame;
+	//
 	RunGameLoop(testGame);
+
+	return 0;
 }
 
 //int oldmain()
@@ -95,13 +109,13 @@ int main()
 //	return 0;
 //}
 
-void clearScreen(u16 clearColor)
-{
-	for (u16 i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i)
-		mykd::FrontBuffer_[i] = clearColor;
-}
+// void clearScreen(u16 clearColor)
+// {
+// 	for (u16 i = 0; i < SCREEN_WIDTH * SCREEN_HEIGHT; ++i)
+// 		mykd::FrontBuffer_[i] = clearColor;
+// }
 
-u16 coordToIndex(u16 x, u16 y)
-{
-	return y * SCREEN_WIDTH + x;
-}
+// u16 coordToIndex(u16 x, u16 y)
+// {
+// 	return y * SCREEN_WIDTH + x;
+// }

@@ -3,8 +3,7 @@
 #include "ForceInline.h"
 #include <cstdint>
 #include <ratio>
-#include "tonc_types.h"
-#include "tonc_video.h"
+#include "tonc.h"
 #include <cassert>
 
 
@@ -84,14 +83,14 @@ namespace mykd
 	template <typename T, std::uintptr_t Adress, u32 Size>
 	T& GBARegister<T, Adress, Size>::operator[](u32 index)
 	{
-		assert(index < Size);
+		//assert(index < Size);
 		return GetPtr()[index];
 	}
 
 	template <typename T, std::uintptr_t Adress, u32 Size>
 	const T& GBARegister<T, Adress, Size>::operator[](u32 index) const
 	{
-		assert(index < Size);
+		//assert(index < Size);
 		return GetPtr()[index];
 	}
 }

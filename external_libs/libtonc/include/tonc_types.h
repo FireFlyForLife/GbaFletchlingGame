@@ -42,7 +42,7 @@
 //     // code 
 // }
 
-
+#if !__INTELLISENSE__
 //! Put variable in IWRAM (default).
 #define IWRAM_DATA __attribute__((section(".iwram")))
 
@@ -82,6 +82,47 @@
 	Replacements are (usually) present somewhere as well. 
 */
 #define DEPRECATED	__attribute__((deprecated))
+#else
+//! Put variable in IWRAM (default).
+#define IWRAM_DATA
+
+//! Put variable in EWRAM.
+#define EWRAM_DATA
+
+//! Put <b>non</b>-initialized variable in EWRAM.
+#define  EWRAM_BSS
+
+//! Put function in IWRAM.
+#define IWRAM_CODE
+
+//! Put function in EWRAM.
+#define EWRAM_CODE
+
+//! Force a variable to an \a n-byte boundary
+#define ALIGN(n)
+
+//! Force word alignment.
+/*! \note	In the old days, GCC aggregates were always word aligned.
+	  In the EABI environment (devkitPro r19 and higher), they are
+	  aligned to their widest member. While technically a good thing,
+	  it may cause problems for struct-copies. If you have aggregates
+	  that can multiples of 4 in size but don't have word members,
+	  consider using this attribute to make struct-copies possible again.
+*/
+#define ALIGN4
+
+//! Pack aggregate members
+/*! By default, members in aggregates are aligned to their native
+	  boundaries. Adding this prevents that. It will slow access though.
+*/
+#define PACKED
+
+//! Deprecated notice.
+/*! Indicates that this function/type/variable should not be used anymore.
+	Replacements are (usually) present somewhere as well.
+*/
+#define DEPRECATED	__attribute__((deprecated))
+#endif
 
 //! Inline function declarator
 /*!	`inline' inlines the function when -O > 0 when called, 
